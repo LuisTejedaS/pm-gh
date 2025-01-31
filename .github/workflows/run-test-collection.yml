@@ -8,6 +8,6 @@ jobs:
     uses: .LuisTejedaS/pm-gh/.github/workflows/run-postman-collection.yml
     with:
       collection_name: "postman/testCollection.json"
-      environment_name: "postman/tetEnvironment.json"
+      environment_name: "postman/testEnvironment.json"
     secrets:
       API_KEY: ${{ secrets.API_KEY }}

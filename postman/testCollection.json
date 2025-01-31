@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "80076109-e7e6-4aa5-a52e-9cba863a50c7",
+		"name": "testCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1766795",
+		"_collection_link": "https://personia.postman.co/workspace/postman-cli~e178bdec-9f1d-488f-939c-2cbd94e875b1/collection/1766795-80076109-e7e6-4aa5-a52e-9cba863a50c7?action=share&source=collection_link&creator=1766795"
+	},
+	"item": [
+		{
+			"name": "https://wordsapiv1.p.rapidapi.com/wrods/lovely/synonyms",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://catfact.ninja/fact?api-key={{api-key}}",
+					"protocol": "https",
+					"host": [
+						"catfact",
+						"ninja"
+					],
+					"path": [
+						"fact"
+					],
+					"query": [
+						{
+							"key": "api-key",
+							"value": "{{api-key}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
