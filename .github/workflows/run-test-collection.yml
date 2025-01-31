@@ -5,9 +5,9 @@ on:
 
 jobs:
   call-pm-passing-data:
-    uses:
+    uses: .LuisTejedaS/pm-gh/.github/workflows/run-postman-collection.yml
     with:
       collection_name: "postman/testCollection.json"
       environment_name: "postman/tetEnvironment.json"
     secrets:
-      API_KEY: ${{secrets.API_KEY}}
+      API_KEY: ${{ secrets.API_KEY }}

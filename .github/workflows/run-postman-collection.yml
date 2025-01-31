@@ -11,9 +11,9 @@ on:
                 description: "Name of the file of the environment"
                 required: true
                 type: string
-            secrets:
-              API_KEY:
-                required: true
+        secrets:
+          API_KEY:
+            required: true
 jobs:
     run-postman:
         runs-on: ubuntu-latest
