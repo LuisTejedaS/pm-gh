@@ -1,0 +1,47 @@
+name: Run Postman Collection
+
+on:
+    workflow_call:
+        inputs:
+            collection_name:
+                description: "Name of the file of postman colletion to run"
+                required: true
+                type: string
+            environment_name:
+                description: "Name of the file of the environment"
+                required: true
+                type: string
+            secrets:
+              API_KEY:
+                required: true
+jobs:
+    run-postman:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                node-version: '22'
+
+            - name: Insatll Newman
+              run: npm install -g newman
+
+            - name: Run Postman collection
+              run: |
+                newman run "${{ inputs.collection_name }}" \
+                --environment "${{ inputs.environment_name }}" \
+                --env-var "api-key=${{ secrets.API_KEY }}" \
+                --reporters cli,json \
+                --reporter-json-export newman-report.json
+              
+            - name: Upload Newman Reports
+              if: always()
+              uses: actions/upload-artifact@v4
+              with:
+                name: newman-reports
+                path: "*.json"
+                retention-days: 10
