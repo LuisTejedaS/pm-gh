@@ -5,7 +5,7 @@ on:
 
 jobs:
   call-pm-passing-data:
-    uses: .LuisTejedaS/pm-gh/.github/workflows/run-postman-collection.yml@main
+    uses: LuisTejedaS/pm-gh/.github/workflows/run-postman-collection.yml@main
     with:
       collection_name: "postman/testCollection.json"
       environment_name: "postman/testEnvironment.json"
